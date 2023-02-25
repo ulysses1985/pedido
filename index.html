@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thaliazinha labigó, quer Casar Comigo?</title>
+    <style>
+        body {
+            background-color: pink;
+        }
+
+        h1 {
+            font-family: sans-serif;
+            font-size: 2em;
+            text-align: center;
+            margin-top: 20%;
+            margin-bottom: 5%;
+            color: white;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        button {
+            font-family: sans-serif;
+            font-size: 1.5em; /* aumenta o tamanho da fonte */
+            display: block;
+            margin: 0 auto;
+            padding: 15px 30px; /* aumenta o tamanho dos botões */
+            border-radius: 20px;
+            color: white;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.1s;
+        }
+
+        .sim {
+            background-color: #7fe57f;
+            margin-right: 10px;
+        }
+
+        .nao {
+            background-color: #ff7f7f;
+            margin-left: 10px;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 80%;
+            height: auto;
+            margin-top: 10%;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Thaliazinha labigó, quer Casar Comigo?</h1>
+    <div class="btn-container">
+        <button class="sim">Sim</button>
+        <button class="nao">Não</button>
+    </div>
+    <img id="imgNao" src="https://br.pinterest.com/pin/407786941243933016/" style="display:none;"> <!-- URL atualizada -->
+    <script>
+        var btnSim = document.querySelector('.sim');
+        var btnNao = document.querySelector('.nao');
+        var imgNao = document.querySelector('#imgNao');
+
+        btnSim.addEventListener('click', function() {
+            var maxX = window.innerWidth - this.offsetWidth;
+            var maxY = window.innerHeight - this.offsetHeight;
+            var randomX = Math.floor(Math.random() * maxX);
+            var randomY = Math.floor(Math.random() * maxY);
+            this.style.transform = 'translate(' + randomX + 'px, ' + randomY + 'px)';
+        });
+
+        btnNao.addEventListener('click', function() {
+            var resposta = confirm('Você não me ama Labigó?'); /* mostra mensagem de confirmação */
+            if (resposta == true) {
+                imgNao.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>
